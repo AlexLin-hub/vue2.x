@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <title>CDN - Vue.js 2.x</title>
 </head>
+
 <body>
-    
+    <div id="app">
+        這是我的第一份 Vue.js 2.x 專案，這是透過 {{type}} 使用 Vue.js 框架。
+    </div>
+    <div id="template"></div>
 </body>
+
 </html>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: { type: "CDN" }
+    })
+    const template = new Vue({
+        el: "#template",
+        template: "<template><div>{{info}}</div></template>",
+        data: { info: "這是一段透過 Vue Template 產出的文字。" }
+    })
+</script>
