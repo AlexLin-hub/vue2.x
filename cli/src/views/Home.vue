@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -16,3 +17,9 @@ export default {
   }
 }
 </script>
+=======
+  <div>
+    <input type="text" />
+  </div>
+</template>
+>>>>>>> fix/develop
