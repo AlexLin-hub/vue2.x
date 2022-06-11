@@ -1,0 +1,14 @@
+{
+  "name": "vuejs-2x-use-npm",
+  "version": "1.0.0",
+  "description": "vue npm to install vuejs 2.x",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Uncle Lin",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
+}
