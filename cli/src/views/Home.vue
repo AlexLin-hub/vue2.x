@@ -1,18 +1,36 @@
 <template>
   <div class="h-screen w-screen flex flex-col justify-center items-center">
-    <h1 class="text-5xl mb-3">v-on</h1>
-    <button
+    <h1 class="text-5xl mb-3">v-on.modifiers</h1>
+    <div
       class="
-        bg-gray-700
-        shadow-lg
-        text-white
-        py-3
-        px-5
-        rounded-lg
-        hover:bg-gray-500
+        w-[300px]
+        h-[300px]
+        bg-gray-600
+        rounded-xl
+        flex flex-col
+        items-center
+        justify-center
+        relative
+        cursor-pointer
+        shadow-md
       "
     >
-      點擊我
-    </button>
+      <p class="absolute top-2 text-white text-center">block01</p>
+      <div
+        class="
+          w-[200px]
+          h-[200px]
+          bg-gray-300
+          rounded-xl
+          flex
+          justify-center
+          items-center
+          cursor-pointer
+          shadow-md
+        "
+      >
+        <p class="text-black">block02</p>
+      </div>
+    </div>
   </div>
 </template>
