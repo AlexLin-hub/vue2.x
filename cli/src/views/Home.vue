@@ -1,16 +1,20 @@
 <template>
   <div class="grid grid-cols-3 gap-5 w-full px-3 py-3">
-    <div
-      class="
-        h-full
-        rounded-lg
-        px-3
-        py-2
-        shadow-inner
-        hover:shadow-lg
-        cursor-pointer
-      "
-    >
+    <div class="h-full rounded-lg px-3 py-2 shadow-lg relative">
+      <button
+        class="
+          absolute
+          bg-red-500
+          text-white
+          px-2
+          py-1
+          rounded-md
+          right-4
+          text-sm
+        "
+      >
+        刪除
+      </button>
       <h3 class="text-2xl font-bold text-gray-800">{{ users[0].name }}</h3>
       <h5 class="text-sm text-gray-400">{{ users[0].UID }}</h5>
       <h5 class="text-sm mt-3 text-gray-600">
