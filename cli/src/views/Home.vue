@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center h-screen">
-    <h1 class="text-4xl">v-if/v-show</h1>
-    <div class="flex gap-5 mt-4">
+    <h1 class="text-5xl mb-3">v-if/v-show</h1>
+    <div class="flex gap-5">
       <div
         class="
           w-[300px]
