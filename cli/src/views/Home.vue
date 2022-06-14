@@ -1,34 +1,18 @@
 <template>
   <div class="grid grid-cols-3 gap-5 w-full px-3 py-3">
-    <div
-      class="h-full rounded-lg px-3 py-2 shadow-lg relative"
-      v-for="user in users"
-      :key="user['UID']"
-    >
-      <button
-        class="
-          absolute
-          bg-red-500
-          text-white
-          px-2
-          py-1
-          rounded-md
-          right-4
-          text-sm
-        "
-      >
-        刪除
-      </button>
-      <h3 class="text-2xl font-bold text-gray-800">{{ user.name }}</h3>
-      <h5 class="text-sm text-gray-400">{{ user.UID }}</h5>
-      <h5 class="text-sm mt-3 text-gray-600">
-        最後更新時間：{{ user.updateTime }}
-      </h5>
+    <div v-for="user in currentUsers" :key="user['UID']">
+      <portal-card
+        :user="user"
+        :is-delete="isDelete(user['UID'])"
+        @delete="deleteUser($event)"
+      />
     </div>
   </div>
 </template>
 <script>
+import PortalCard from "@/components/PortalCard.vue";
 export default {
+  components: { PortalCard },
   data() {
     return {
       users: [
@@ -229,7 +213,42 @@ export default {
           isDelete: null,
         },
       ],
+      currentUsers: [],
+      ashcan: [],
     };
+  },
+  mounted() {
+    this.init();
+  },
+  computed: {
+    // 網址query name=???
+    filterName() {
+      const { query } = this.$route;
+      const { name } = query;
+      return name;
+    },
+  },
+  methods: {
+    // 初始化資料
+    init() {
+      // 如果 filterName 有值，則篩選出相對應使用者
+      if (this.filterName) {
+        this.currentUsers = this.users.filter((user) =>
+          user["name"].toLowerCase().includes(this.filterName.toLowerCase())
+        ); // 全轉小寫後搜尋
+        return;
+      }
+      // 如果 filterName 沒有值
+      this.currentUsers = this.users.slice(0); //直接複製
+    },
+    // 刪除人員
+    deleteUser(user) {
+      this.ashcan.push(user); //放進垃圾桶
+    },
+    // 已被刪除
+    isDelete(UID) {
+      return !!this.ashcan.find((user) => user["UID"] === UID);
+    },
   },
 };
 </script>
