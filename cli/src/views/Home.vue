@@ -1,34 +1,17 @@
 <template>
   <div class="grid grid-cols-3 gap-5 w-full px-3 py-3">
-    <div
-      class="h-full rounded-lg px-3 py-2 shadow-lg relative"
+    <portal-card
       v-for="user in users"
       :key="user['UID']"
-    >
-      <button
-        class="
-          absolute
-          bg-red-500
-          text-white
-          px-2
-          py-1
-          rounded-md
-          right-4
-          text-sm
-        "
-      >
-        刪除
-      </button>
-      <h3 class="text-2xl font-bold text-gray-800">{{ user.name }}</h3>
-      <h5 class="text-sm text-gray-400">{{ user.UID }}</h5>
-      <h5 class="text-sm mt-3 text-gray-600">
-        最後更新時間：{{ user.updateTime }}
-      </h5>
-    </div>
+      v-bind:user="user"
+      v-on:onClick="hey($event)"
+    ></portal-card>
   </div>
 </template>
 <script>
+import PortalCard from "../components/PortalCard.vue";
 export default {
+  components: { PortalCard },
   data() {
     return {
       users: [
@@ -230,6 +213,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    hey(what) {
+      alert(what);
+    },
   },
 };
 </script>
