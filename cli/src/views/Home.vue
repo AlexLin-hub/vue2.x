@@ -14,6 +14,7 @@
         cursor-pointer
         shadow-md
       "
+      v-on:click.self="hey('block01')"
     >
       <p class="absolute top-2 text-white text-center">block01</p>
       <div
@@ -28,9 +29,19 @@
           cursor-pointer
           shadow-md
         "
+        v-on:click="hey('block02')"
       >
         <p class="text-black">block02</p>
       </div>
     </div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    hey(what) {
+      console.log(what);
+    },
+  },
+};
+</script>
