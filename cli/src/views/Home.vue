@@ -3,6 +3,7 @@
     <h1 class="text-5xl mb-3">v-bind</h1>
     <div>
       <input
+        v-model="value"
         class="
           border-2
           rounded-lg
@@ -19,6 +20,7 @@
         type="text"
         placeholder="請輸入資料"
         autofocus
+        v-bind:disabled="isDisabled"
       />
       <button
         class="
@@ -31,6 +33,7 @@
           shadow-md
           hover:bg-gray-600
         "
+        v-on:click="turnOn()"
       >
         開啟
       </button>
@@ -43,7 +46,13 @@ export default {
   data() {
     return {
       value: "",
+      isDisabled: true,
     };
+  },
+  methods: {
+    turnOn() {
+      this.isDisabled = false;
+    },
   },
 };
 </script>
