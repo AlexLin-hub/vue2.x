@@ -1,6 +1,10 @@
 <template>
   <div class="grid grid-cols-3 gap-5 w-full px-3 py-3">
-    <div class="h-full rounded-lg px-3 py-2 shadow-lg relative">
+    <div
+      v-for="user in users"
+      :key="user['UID']"
+      class="h-full rounded-lg px-3 py-2 shadow-lg relative"
+    >
       <button
         class="
           absolute
@@ -15,10 +19,10 @@
       >
         刪除
       </button>
-      <h3 class="text-2xl font-bold text-gray-800">{{ users[0].name }}</h3>
-      <h5 class="text-sm text-gray-400">{{ users[0].UID }}</h5>
+      <h3 class="text-2xl font-bold text-gray-800">{{ user.name }}</h3>
+      <h5 class="text-sm text-gray-400">{{ user.UID }}</h5>
       <h5 class="text-sm mt-3 text-gray-600">
-        最後更新時間：{{ users[0].updateTime }}
+        最後更新時間：{{ user.updateTime }}
       </h5>
     </div>
   </div>
