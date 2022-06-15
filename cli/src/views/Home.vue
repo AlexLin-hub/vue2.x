@@ -2,6 +2,7 @@
   <div class="h-screen w-screen flex flex-col justify-center items-center">
     <h1 class="text-5xl mb-3">v-model</h1>
     <input
+      v-model="value"
       class="
         border-2
         rounded-lg
