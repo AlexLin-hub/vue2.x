@@ -12,7 +12,7 @@
           h-20
         "
       >
-        <span class="text-xl"></span>
+        <span class="text-xl">{{ val01 }}</span>
       </div>
       <div
         class="
@@ -24,7 +24,7 @@
           h-20
         "
       >
-        <span class="text-xl"></span>
+        <span class="text-xl">{{ val02 }}</span>
       </div>
       <div
         class="
@@ -36,7 +36,7 @@
           h-20
         "
       >
-        <span class="text-xl"></span>
+        <span class="text-xl">{{ val03 }}</span>
       </div>
       <div
         class="
@@ -48,7 +48,7 @@
           h-20
         "
       >
-        <span class="text-xl"></span>
+        <span class="text-xl">{{ val04 }}</span>
       </div>
       <div
         class="
@@ -60,7 +60,7 @@
           h-20
         "
       >
-        <span class="text-xl"></span>
+        <span class="text-xl">{{ val05 }}</span>
       </div>
       <div
         class="
@@ -72,7 +72,7 @@
           h-20
         "
       >
-        <span class="text-xl"></span>
+        <span class="text-xl">{{ val06 }}</span>
       </div>
       <div
         class="
@@ -84,7 +84,7 @@
           h-20
         "
       >
-        <span class="text-xl"></span>
+        <span class="text-xl">{{ val07 }}</span>
       </div>
       <div
         class="
@@ -96,7 +96,7 @@
           h-20
         "
       >
-        <span class="text-xl"></span>
+        <span class="text-xl">{{ val08 }}</span>
       </div>
     </div>
   </div>
