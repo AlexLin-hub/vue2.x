@@ -3,6 +3,7 @@
     <h1 class="text-5xl mb-3">v-if/v-show</h1>
     <div class="flex gap-5">
       <div
+        v-if="isShow"
         class="
           w-[300px]
           h-[300px]
@@ -18,6 +19,7 @@
       </div>
 
       <div
+        v-show="isShow"
         class="
           w-[300px]
           h-[300px]
@@ -34,3 +36,12 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      isShow: false,
+    };
+  },
+};
+</script>
